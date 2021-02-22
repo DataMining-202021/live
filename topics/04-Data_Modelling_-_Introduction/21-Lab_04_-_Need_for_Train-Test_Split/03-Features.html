@@ -221,7 +221,13 @@
 <span class="n">X_test_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
-<p>The <code>.reshape(-1, 1)</code> code is the force our one-dimensional matrix/vector of features to be treated as a two-dimensional matrix (with one column).  In model with more that one feature, you won't need this.</p>
+<p>Or you can combine the <em>fit</em> and <em>transform</em> steps for the train dataset using </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">X_train_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X_test_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<p>The <code>.reshape(-1, 1)</code> code is to force our one-dimensional matrix/vector of features to be treated as a two-dimensional matrix (with one column).  In models with more that one feature, you won't need this.</p>
 <p>Next we will <a href="04-Fit.html">fit our model to the train data</a>.</p>
 		
 		<ul class="pager">

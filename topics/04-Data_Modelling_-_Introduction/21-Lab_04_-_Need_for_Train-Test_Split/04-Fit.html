@@ -194,18 +194,18 @@
 		</ul>
 		
 		<h1>Fit / Train Model</h1>
-<p>To find our model, we  use the <a href="https://scikit-learn.org/stable/">sklearn</a> model </p>
-<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">LinearRegression</a> which we import and create instance using</p>
+<p>To find our model, we  use the <a href="https://scikit-learn.org/stable/">sklearn</a> model 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">LinearRegression</a> which we import and create an instance of using</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<p>To fit the model to the train data set we use</p>
+<p>To fit this model to the train data set we use</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_poly</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>How well does this model work?  Using to MSE metric that we discussed in class we import this via</p>
+<p>How well does this model work?  To use the MSE metric that we discussed in class we import this via</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 </code></pre></div>
 </td></tr></table>
