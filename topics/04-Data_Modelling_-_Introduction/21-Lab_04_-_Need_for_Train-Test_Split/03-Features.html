@@ -228,6 +228,43 @@
 </code></pre></div>
 </td></tr></table>
 <p>The <code>.reshape(-1, 1)</code> code is to force our one-dimensional matrix/vector of features to be treated as a two-dimensional matrix (with one column).  In models with more that one feature, you won't need this.</p>
+<p>If we look at the first two rows in <code>X_train</code> and <code>X_train_ploy</code> we can see what <code>PolynomialFeatures</code> does</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">X_train</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>returns</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mf">0.19764205</span><span class="p">,</span> <span class="mf">0.35610685</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<p>While</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">X_train_poly</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>returns</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mf">1.00000000e+00</span><span class="p">,</span> <span class="mf">1.97642046e-01</span><span class="p">,</span> <span class="mf">3.90623783e-02</span><span class="p">,</span> <span class="mf">7.72036838e-03</span><span class="p">,</span>
+        <span class="mf">1.52586940e-03</span><span class="p">,</span> <span class="mf">3.01575950e-04</span><span class="p">,</span> <span class="mf">5.96040879e-05</span><span class="p">,</span> <span class="mf">1.17802739e-05</span><span class="p">,</span>
+        <span class="mf">2.32827743e-06</span><span class="p">,</span> <span class="mf">4.60165515e-07</span><span class="p">,</span> <span class="mf">9.09480539e-08</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.00000000e+00</span><span class="p">,</span> <span class="mf">3.56106846e-01</span><span class="p">,</span> <span class="mf">1.26812086e-01</span><span class="p">,</span> <span class="mf">4.51586519e-02</span><span class="p">,</span>
+        <span class="mf">1.60813051e-02</span><span class="p">,</span> <span class="mf">5.72666284e-03</span><span class="p">,</span> <span class="mf">2.03930384e-03</span><span class="p">,</span> <span class="mf">7.26210059e-04</span><span class="p">,</span>
+        <span class="mf">2.58608374e-04</span><span class="p">,</span> <span class="mf">9.20922124e-05</span><span class="p">,</span> <span class="mf">3.27946673e-05</span><span class="p">]])</span>
+</code></pre></div>
+</td></tr></table>
+<p>Looking across the values in the first row of <code>X_train_poly</code> we see the generated powers. So using my data in the first row I have \(x=0.197642046\) and the powers of this are 
+\[
+    x^0 = 1,
+    \qquad
+    x^1 = 1.976e-01,
+    \qquad
+    x^2 = 3.906e-02,
+    \qquad\ldots\qquad
+    x^{10} = 9.095e-08],
+\]</p>
+<p>Similarly for all rows in <code>X_train_poly</code>.</p>
 <p>Next we will <a href="04-Fit.html">fit our model to the train data</a>.</p>
 		
 		<ul class="pager">

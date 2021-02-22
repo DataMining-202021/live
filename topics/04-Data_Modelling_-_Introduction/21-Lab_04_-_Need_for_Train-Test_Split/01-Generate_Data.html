@@ -226,7 +226,7 @@ defined as
 </code></pre></div>
 </td></tr></table>
 <p class="alert alert-warning">Note: I will use uppercase 'X' to represent the single feature even though it is a vector (and not a 2D matrix) so that my naming convention (of <code>X_train</code>, <code>y_train</code> etc ) won't need to change when we move to more complicated models with multiple features later in the module.</p>
-<p>Depending on your choice to generate <code>X</code> data points the following code </p>
+<p>Depending on your choice to generate the <code>X</code> data points the following code </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -246,14 +246,14 @@ defined as
 </figure>
 
 <p><strong>Example 2</strong></p>
-<p>The second example, \(f_2(x)=S(20x+10)-S(10x)\), is based on sigmoid/logistic function, \(S(x)\), defined as
+<p>The second example, \(f_2(x)=S(20x-10) - S(10x)\), is based on sigmoid/logistic function, \(S(x)\), defined as
 \[
     S(x) = \frac{1}{1+\exp(-x)}
 \]</p>
 <p>and can be implemented in python as</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">10</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">10</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
 <p>And using code similar to above we get graphs</p>
