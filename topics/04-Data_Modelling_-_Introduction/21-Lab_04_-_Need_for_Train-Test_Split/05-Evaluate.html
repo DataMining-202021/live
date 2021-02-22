@@ -194,7 +194,7 @@
 		</ul>
 		
 		<h1>Evaluation Using Test Dataset</h1>
-<p>We compute the MSE over the test dataset (using the same code as for the train)</p>
+<p>We computed the MSE over the test dataset (using the same code as for the train)</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_poly</span><span class="p">)</span>
 <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>   
@@ -202,6 +202,12 @@
 </td></tr></table>
 <p>On my machine I get MSE = 0.008973961142558669.</p>
 <p>At this point, I have performed a degree 10 fit and the MSE on the test and train appear to be close. But I need context. So I (you) need to repeat this process for a range of values for the degree to determine its optimal value. </p>
+<h1>Questions</h1>
+<ul>
+<li>For both examples, what is the optional value for the model complexity parameter (the polynomial degree)?</li>
+<li>Does the train/test split ratio (here I used 60%/40%) have an effect?</li>
+<li>What, if any is the effect of the equidistant vs uniform random points on the resulting model?</li>
+</ul>
 		
 		<ul class="pager">
 			
